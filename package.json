@@ -1,0 +1,20 @@
+{
+  "name": "expressjs-api",
+  "version": "1.0.0",
+  "description": "API",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node ./dist/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexander Ershov",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "tslog": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13"
+  }
+}
