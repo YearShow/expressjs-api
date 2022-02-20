@@ -1,4 +1,3 @@
-import { Logger } from 'tslog';
 
 export interface ILogger {
 	logger: unknown;
