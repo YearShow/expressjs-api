@@ -1,19 +1,19 @@
-import { Container, ContainerModule, interfaces } from 'inversify';
-import { App } from './app';
-import { LoggerService } from './logger/logger.service';
-import { ILogger } from './logger/logger.interface';
-import { TYPES } from './types';
-import { IExceptionFilter } from './errors/exception.filter.interface';
-import { ExceptionFilter } from './errors/exception.filter';
-import { IUserService } from './users/users.service.interface';
-import { UserService } from './users/users.service';
-import { IUserController } from './users/users.controller.interface';
-import { UserController } from './users/users.controller';
-import { IConfigService } from './config/config.service.interface';
-import { ConfigService } from './config/config.service';
-import { PrismaService } from './database/prisma.service';
-import { IUsersRepository } from './users/users.repository.interface';
-import { UsersRepository } from './users/users.repository';
+import {Container, ContainerModule, interfaces} from 'inversify';
+import {App} from './app';
+import {LoggerService} from './logger/logger.service';
+import {ILogger} from './logger/logger.interface';
+import {TYPES} from './types';
+import {IExceptionFilter} from './errors/exception.filter.interface';
+import {ExceptionFilter} from './errors/exception.filter';
+import {IUserService} from './users/users.service.interface';
+import {UserService} from './users/users.service';
+import {IUserController} from './users/users.controller.interface';
+import {UserController} from './users/users.controller';
+import {IConfigService} from './config/config.service.interface';
+import {ConfigService} from './config/config.service';
+import {PrismaService} from './database/prisma.service';
+import {IUsersRepository} from './users/users.repository.interface';
+import {UsersRepository} from './users/users.repository';
 
 export interface IBootstrapReturn {
 	appContainer: Container;
@@ -36,7 +36,7 @@ function bootstrap(): IBootstrapReturn {
 	appContainer.load(appBindings);
 	const app = appContainer.get<App>(TYPES.Application);
 	app.init();
-	return { app, appContainer };
+	return {app, appContainer};
 }
 
-export const { app, appContainer } = bootstrap();
+export const {app, appContainer} = bootstrap();

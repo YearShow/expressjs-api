@@ -1,10 +1,10 @@
 import { NextFunction, Request, Response } from 'express';
 import { ClassConstructor, plainToClass } from 'class-transformer';
 import { validate } from 'class-validator';
-import { IMiddleWare } from './middle.interface';
+import { IMiddleware } from './middleware.interface';
 
-export class ValidateMiddleware implements IMiddleWare {
-	constructor(private classToValidate: ClassConstructor<object>) {}
+export class ValidateMiddleware implements IMiddleware {
+	constructor(private classToValidate: ClassConstructor<object>) { }
 	execute({ body }: Request, res: Response, next: NextFunction): void {
 		const instance = plainToClass(this.classToValidate, body);
 		validate(instance).then((errors) => {
